@@ -123,9 +123,9 @@ Python — SQL would be the wrong tool for it. (See `docs/DECISIONS.md` §3.)
   drifting copies); documented why the two recurring detectors intentionally differ.
 - **Trimmed speculative schema** — dropped the unused `envelopes` table and the
   always-NULL `category_human` column.
-- **Typed core + mypy gate.** `money.py`, `store/analytics.py`, and `mcp_server.py` are
-  type-annotated and checked by `mypy` in CI — a typed core that expands outward (the
-  engines are not yet typed).
+- **mypy gate over the whole package.** CI runs `mypy` across all of `src/finance_mcp`
+  (default strictness — real type errors, clean); `money.py`, `store/analytics.py`, and
+  `mcp_server.py` are fully annotated, and richer annotations spread from there.
 - **Split the oversized renderer.** `digest_templates.py` (2487 lines) → 1178, with the
   static CSS/SVG in `_report_styles.py` and the date/money/severity formatters in
   `_report_format.py`. Public render API unchanged.

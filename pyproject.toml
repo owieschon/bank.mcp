@@ -40,16 +40,11 @@ line-length = 100
 target-version = "py310"
 
 [tool.mypy]
-# A typed core with a passing gate, expanding outward (the engines are not yet typed).
-# Checks these modules; imported-but-untyped modules are followed for types but not
-# reported on, so the gate stays green while typing spreads.
+# Type-checks the whole package at default strictness (real type errors, not a
+# missing-annotation crusade). The money/analytics/mcp_server core is fully annotated;
+# the rest is checked for type correctness as annotations spread.
 python_version = "3.10"
-files = [
-    "src/finance_mcp/money.py",
-    "src/finance_mcp/store/analytics.py",
-    "src/finance_mcp/mcp_server.py",
-]
-follow_imports = "silent"
+files = ["src/finance_mcp"]
 ignore_missing_imports = true
 
 [tool.ruff.lint]

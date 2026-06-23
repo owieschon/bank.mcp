@@ -68,7 +68,7 @@ finance-mcp demo        # build + print a full digest from synthetic data
 finance-mcp analytics   # SQL reporting rollups (see src/finance_mcp/store/queries.sql)
 pytest -q               # 303 tests
 ruff check src tests    # lint
-mypy                    # type-check the typed core
+mypy                    # type-check the package
 ```
 
 `finance-mcp demo` needs no bank credentials and no real data — it generates a

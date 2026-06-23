@@ -33,7 +33,7 @@ and is also the source of the test fixture (`tests/fixtures/transactions.sample.
 ```bash
 pytest -q                   # 303 tests
 ruff check src tests        # lint
-mypy                        # type-check the typed core (money, analytics, mcp_server)
+mypy                        # type-check the package (money/analytics/mcp_server fully annotated)
 ```
 
 ## Build the static report site
