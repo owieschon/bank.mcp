@@ -40,6 +40,7 @@ import urllib.error
 import urllib.request
 
 # Reuse delivery's credential pattern
+from finance_mcp.ingest import safehttp
 from finance_mcp.report import delivery
 
 MODEL = "claude-3-5-haiku-latest"
@@ -120,10 +121,12 @@ def _call_haiku(system, user, api_key=None):
         return None
 
     try:
-        with urllib.request.urlopen(req, timeout=30) as r:
+        # Route through the SSRF guard (HTTPS-only, host-pinned, bounded timeout),
+        # the same wrapper delivery.call_haiku uses — no raw urlopen anywhere.
+        with safehttp.fetch(req, timeout=30) as r:
             data = json.loads(r.read())
         return "".join(b.get("text", "") for b in data.get("content", [])).strip()
-    except (urllib.error.HTTPError, urllib.error.URLError, Exception):
+    except Exception:
         return None
 
 
