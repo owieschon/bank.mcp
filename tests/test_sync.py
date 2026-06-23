@@ -398,8 +398,8 @@ class DailyShLogicTest(unittest.TestCase):
 class MultiSourceRoutingTest(unittest.TestCase):
     """sync_all_sources routing: a tokenless Item must use the subprocess path
     (access_token=None) — NOT be dropped as 'failed' — while a tokened Item uses
-    Plaid direct. This is what makes activating plaid_items.json safe: the user's
-    tokenless Item keeps syncing via the bank-mcp fork, the second tokened Item
+    Plaid direct. This is what makes activating plaid_items.json safe: the primary
+    account's tokenless Item keeps syncing via the bank-mcp fork, the second tokened Item
     goes direct."""
 
     def test_tokenless_subprocess_tokened_direct(self):

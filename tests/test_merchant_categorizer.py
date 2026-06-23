@@ -90,9 +90,9 @@ class TestPrecedence(unittest.TestCase):
     def test_generic_acquirer_square_is_not_a_signal(self):
         # Square is a generic terminal; PFC must win, source = pfc.
         t = txn(category="GENERAL_MERCHANDISE_TOBACCO_AND_VAPE",
-                counterparties=[cp("Smokology", "merchant", "VERY_HIGH"),
+                counterparties=[cp("Vape Shop", "merchant", "VERY_HIGH"),
                                 cp("Square", "payment_terminal", "VERY_HIGH")],
-                merchant_name="Smokology")
+                merchant_name="Vape Shop")
         res = mc.get_category(t, overrides={})
         self.assertEqual(res["category"], "GENERAL_MERCHANDISE_TOBACCO_AND_VAPE")
         self.assertEqual(res["source"], "pfc")

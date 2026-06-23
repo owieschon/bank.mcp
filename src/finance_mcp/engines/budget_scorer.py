@@ -142,7 +142,7 @@ def _is_p2p_send(t):
     m = _mer(t)
     return any(k in m for k in _P2P_MER)
 
-_PERSONAL_SUBS = ("albert", "netflix", "dashp", "perplexity", "adobe", "elevenlabs", "spotify")
+_COMMON_SUBS = ("albert", "netflix", "dashp", "perplexity", "adobe", "elevenlabs", "spotify")
 
 def matcher_for(leak):
     s = leak.lower()
@@ -153,7 +153,7 @@ def matcher_for(leak):
     if "vape" in s or "tobacco" in s or "nicotine" in s:
                                             return lambda t: _cat(t) == "GENERAL_MERCHANDISE_TOBACCO_AND_VAPE"
     if "claude" in s or "api" in s:         return lambda t: ("anthropic" in _mer(t) or "claude" in _mer(t))
-    if "sub" in s:                          return lambda t: any(k in _mer(t) for k in _PERSONAL_SUBS)
+    if "sub" in s:                          return lambda t: any(k in _mer(t) for k in _COMMON_SUBS)
     if "cash" in s or "transfer" in s:      return lambda t: _cat(t).startswith("TRANSFER_OUT")
     return None   # unmatched rule — reported, not scored
 
@@ -219,7 +219,7 @@ def trailing_monthly_net(txns, as_of, n=3):
         key = (d.year, d.month)
         if sc.is_outflow(t):
             # Exclude self-transfers AND P2P sends to people: the FORWARD pace
-            # must reflect the user's current behavior, and he has stopped Zelling.
+            # must reflect the user's current behavior, not past P2P habits.
             # (Both still count as real spend in the running total / history.)
             if _is_transfer(t) or _is_p2p_send(t):
                 continue
@@ -256,10 +256,10 @@ CATEGORY_LABELS = {
     "GENERAL_MERCHANDISE_DEPARTMENT_STORES": "Department stores",
     "GENERAL_MERCHANDISE_OTHER_GENERAL_MERCHANDISE": "Shopping",
     "GENERAL_SERVICES_OTHER_GENERAL_SERVICES": "Services",  # AI override below
-    "GENERAL_SERVICES_INSURANCE": "Ankle monitor",
+    "GENERAL_SERVICES_INSURANCE": "Insurance",
     "GENERAL_SERVICES_CONSULTING_AND_LEGAL": "Legal",
     "GENERAL_SERVICES_ACCOUNTING_AND_FINANCIAL_PLANNING": "Financial",
-    "GOVERNMENT_AND_NON_PROFIT_GOVERNMENT_DEPARTMENTS_AND_AGENCIES": "Government / court",
+    "GOVERNMENT_AND_NON_PROFIT_GOVERNMENT_DEPARTMENTS_AND_AGENCIES": "Government",
     "MEDICAL_PHARMACIES_AND_SUPPLEMENTS": "Pharmacy",
     "PERSONAL_CARE_HAIR_AND_BEAUTY": "Personal care",
     "ENTERTAINMENT_MUSIC_AND_AUDIO": "Music",
@@ -503,7 +503,7 @@ def build_summary(txns, R, mode, balance=None):
             running += amt
     base_days = (as_of - R["baseline_date"]).days + 1
 
-    # MONK-MODE forward plan: the savings rate is what the user will save going
+    # LEAN-BUDGET forward plan: the savings rate is what the user will save going
     # forward = monthly income − fixed obligations − the chosen discretionary
     # budget. NOT the historical trailing average (which bakes in pre-budget
     # spending and is wrong for someone who has changed behavior).
@@ -542,7 +542,7 @@ def build_summary(txns, R, mode, balance=None):
     goal["historical_pace"] = round(smoothed_rate, 2)   # kept for reference only
     goal["projection_basis"] = trailing
     goal["freed_obligations"] = freed
-    # Monk-mode status: net-positive saving is "on track", even if the projected
+    # Lean-budget status: net-positive saving is "on track", even if the projected
     # total lands short of the full target. Only a non-positive rate is "behind".
     if forward_rate <= 0:
         goal["status"] = "behind"

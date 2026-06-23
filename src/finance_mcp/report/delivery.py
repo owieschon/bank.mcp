@@ -127,7 +127,7 @@ def _gmail_password():
 
 def _gmail_address():
     """Gmail address from env GMAIL_ADDRESS, else macOS Keychain (service
-    GMAIL_ADDRESS), else a hardcoded default for the user's setup. Mirrors the
+    GMAIL_ADDRESS), else a neutral placeholder. Mirrors the
     env-then-Keychain pattern used for every other credential in the suite."""
     addr = os.environ.get("GMAIL_ADDRESS")
     if addr:
