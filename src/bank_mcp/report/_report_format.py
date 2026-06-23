@@ -54,10 +54,10 @@ def _format_date_short(date_str):
 
 
 def money_html(x):
-    """HTML money with a data-usd hook for the client-side USD↔BRL toggle.
+    """HTML money with a data-usd hook for the client-side USD↔secondary-currency toggle.
 
     Renders the canonical USD string but wraps it in a span carrying the raw
-    numeric value, so assets/currency.js can re-denominate it to BRL in the
+    numeric value, so assets/currency.js can re-denominate it in the
     hosted report (email clients ignore the attribute and just show USD).
     Non-numeric input falls back to plain money() so nothing breaks.
     """

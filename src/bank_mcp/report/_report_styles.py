@@ -13,14 +13,14 @@ _CSS = """\
     --red-bg: #FEE4E2;
     --red-border: #FBBFBA;
     --red-deep: #D62F26;
-    --amber: #F2B705;          /* the secondary region amarelo — gold/caution/highlight */
+    --amber: #F2B705;          /* gold / caution / highlight */
     --amber-bg: #FFF3CC;
     --amber-border: #FBE08A;
-    --green: #009C53;          /* the secondary region green — good/saved, the lead color */
+    --green: #009C53;          /* good / saved — the lead color */
     --green-bg: #D4F4E2;
     --green-border: #8FE3B6;
     --green-deep: #00803F;
-    --blue: #1E50C8;           /* the secondary region blue — info/accent */
+    --blue: #1E50C8;           /* info / accent */
     --blue-bg: #DEE7FB;
     --blue-border: #B4C6F4;
     --text-primary: #15171C;   /* crisp near-black ink */
@@ -619,7 +619,7 @@ _CSS = """\
     .month-summary-card { flex-direction: column; align-items: flex-start; gap: 4px; }
   }
 
-  /* ── regional-Claude layer: serif headings, green masthead accent ── */
+  /* ── serif-heading layer: serif headings, green masthead accent ── */
   .email-header { border-top-color: var(--green); }
   .email-header-left h1,
   .report-header h2,
@@ -636,7 +636,7 @@ _CSS = """\
   .fx-seg button { font: inherit; font-size: 12px; font-weight: 600; border: 0; background: transparent; color: var(--text-tertiary); padding: 5px 13px; border-radius: 999px; cursor: pointer; transition: all 0.15s ease; }
   .fx-seg button.is-active { background: var(--green); color: #fff; box-shadow: 0 1px 4px rgba(0,166,81,0.45); }
 
-  /* ── PPP orientation notes (BRL view only; toggled by currency.js) ── */
+  /* ── PPP orientation notes (secondary-currency view only; toggled by currency.js) ── */
   .ppp-note { margin: 10px 0 2px; padding: 9px 13px; background: var(--green-bg); border-left: 2.5px solid var(--green); border-radius: 0 8px 8px 0; font-size: 12px; color: var(--green-deep, #008542); line-height: 1.45; }
   .ppp-note [data-ppp-value] { font-family: var(--mono); font-weight: 700; }
   .ppp-note .src { color: var(--text-tertiary); font-size: 11px; }

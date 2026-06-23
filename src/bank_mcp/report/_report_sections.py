@@ -387,7 +387,7 @@ def _section_goal_pace(digest, section_num="02"):
             <div class="big-number-sub">{money_html(income_mo)} income &minus; {money_html(obl_mo)} bills &minus; {money_html(budget_mo)} budget &middot; on pace for ~{money_html(projected)} by {_format_date_short(move_date)}</div>
           </div>
           <div class="ppp-note" data-ppp data-ppp-usd="{target:.2f}">
-            In the secondary region, {money_html(target)} lives like <span data-ppp-value></span> of US spending power.
+            At local prices, {money_html(target)} lives like <span data-ppp-value></span> of US spending power.
             <span class="src">World Bank PPP</span>
           </div>
 """

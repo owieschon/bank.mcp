@@ -111,18 +111,17 @@ def _html_head(title, is_monthly=False):
 
 
 def _currency_assets(digest):
-    """Bake the build-time FX rate + PPP factor and pull in the toggle module.
+    """Bake the build-time FX config and pull in the toggle module.
 
-    Emitted only on the hosted full report (email clients ignore <script>).
-    The pipeline puts the live-fetched rate in digest['fx']; defaults are a
-    safe fallback so a report still renders if the fetch was skipped.
+    Emitted only on the hosted full report (email clients ignore <script>). The
+    pipeline puts the live-fetched rate in digest['fx']; when no secondary currency
+    is configured, ``ccy`` is null and currency.js leaves the report USD-only.
     """
+    import json as _json
     fx = digest.get("fx", {}) or {}
-    rate = fx.get("rate", 5.07)
-    ppp = fx.get("ppp", 2.5)
-    date = fx.get("date", "")
+    payload = {k: fx.get(k) for k in ("rate", "ppp", "date", "ccy", "locale")}
     return f"""\
-  <script>window.__FX = {{ rate: {rate}, ppp: {ppp}, date: "{_esc(str(date))}" }};</script>
+  <script>window.__FX = {_json.dumps(payload)};</script>
   <script src="assets/currency.js" defer></script>
 """
 
@@ -140,13 +139,17 @@ def _drilldown_assets(txns_embed):
 
 
 def _currency_toggle(digest):
-    """USD↔BRL toggle + live-rate readout for the hosted report header."""
+    """USD↔secondary-currency toggle + live-rate readout for the hosted report header.
+
+    Hidden by default; currency.js labels the secondary button and reveals the toggle
+    only when a secondary currency was baked into __FX (REPORT_SECONDARY_CURRENCY).
+    """
     return """\
-      <div class="fx" data-fx-toggle role="group" aria-label="Display currency">
+      <div class="fx" data-fx-toggle role="group" aria-label="Display currency" hidden>
         <span class="fx-rate" data-fx-rate></span>
         <div class="fx-seg">
           <button type="button" data-cur="USD">US$</button>
-          <button type="button" data-cur="BRL">R$</button>
+          <button type="button" data-cur data-fx-secondary></button>
         </div>
       </div>
 """

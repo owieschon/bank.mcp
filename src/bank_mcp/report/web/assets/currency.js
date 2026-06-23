@@ -1,53 +1,78 @@
-/* currency.js — USD↔BRL toggle for bank.mcp reports.
+/* currency.js — optional USD↔secondary-currency toggle for bank.mcp reports.
  *
  * No backend. Every money figure is rendered server-side in USD with a
  * data-usd="<numeric>" attribute. This module:
- *   1. Reads a build-time fallback rate from window.__FX (baked by the Python
- *      pipeline at report generation).
- *   2. On load, refreshes the rate live from a free, no-key, CORS-enabled FX
- *      API (open.er-api.com, then frankfurter.dev), falling back to the baked
- *      rate if both are unreachable.
+ *   1. Reads a build-time config from window.__FX (baked by the Python pipeline):
+ *      { rate, ppp, date, ccy, locale }. If `ccy` is null/absent, no secondary
+ *      currency is configured — the report stays USD-only and the toggle hides.
+ *   2. Otherwise, on load, refreshes the rate live from a free, no-key,
+ *      CORS-enabled FX API (open.er-api.com, then frankfurter.dev), falling back
+ *      to the baked rate if both are unreachable.
  *   3. Converts every [data-usd] element on toggle, persisting the choice.
  *
  * Deterministic math stays in Python; this only re-denominates display values.
+ * The secondary currency is configured via env at build time (REPORT_SECONDARY_*),
+ * so nothing about a particular locale is hardcoded here.
  */
 (function () {
   "use strict";
 
   var baked = window.__FX || {};
-  var rate = typeof baked.rate === "number" ? baked.rate : 5.07;
+  var SECONDARY = (typeof baked.ccy === "string" && baked.ccy) ? baked.ccy.toUpperCase() : null;
+
+  // No secondary currency configured → leave the server-rendered USD as-is and
+  // keep the (hidden) toggle hidden. Expose a no-op API for callers.
+  if (!SECONDARY || typeof baked.rate !== "number") {
+    window.FX = { setCurrency: function () {}, get rate() { return 1; }, get currency() { return "USD"; } };
+    return;
+  }
+
+  var rate = baked.rate;
   var rateDate = baked.date || null;
+  var ppp = typeof baked.ppp === "number" && baked.ppp > 0 ? baked.ppp : null;
+  var locale = baked.locale || "en-US";
   var isLive = false;
 
-  // World Bank PPP conversion factor for the secondary region (LCU per international $).
-  // Updates annually; baked as a stable constant. ~2.5 means R$ 2.5 buys what
-  // US$ 1 buys in the US, so US$ spent in the secondary region stretches ≈ rate/ppp further.
-  var ppp = typeof baked.ppp === "number" ? baked.ppp : 2.5;
-
-  // Live sources, tried in order. Each returns USD->BRL.
+  // Live sources, tried in order. Each returns USD->SECONDARY.
   var SOURCES = [
     { url: "https://open.er-api.com/v6/latest/USD",
-      pick: function (d) { return d && d.rates && d.rates.BRL; },
+      pick: function (d) { return d && d.rates && d.rates[SECONDARY]; },
       when: function (d) { return d && d.time_last_update_utc; } },
-    { url: "https://api.frankfurter.dev/v1/latest?base=USD&symbols=BRL",
-      pick: function (d) { return d && d.rates && d.rates.BRL; },
+    { url: "https://api.frankfurter.dev/v1/latest?base=USD&symbols=" + SECONDARY,
+      pick: function (d) { return d && d.rates && d.rates[SECONDARY]; },
       when: function (d) { return d && d.date; } }
   ];
 
   var fmtUSD = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
-  var fmtBRL = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
-  // Whole-dollar formatter for the PPP "lives like ≈ $X" orientation figure.
   var fmtUSD0 = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  var fmtSEC = new Intl.NumberFormat(locale, { style: "currency", currency: SECONDARY });
+  var fmtSEC0 = new Intl.NumberFormat(locale, { style: "currency", currency: SECONDARY, maximumFractionDigits: 0 });
+
+  function currencySymbol(loc, ccy) {
+    try {
+      var parts = new Intl.NumberFormat(loc, { style: "currency", currency: ccy }).formatToParts(0);
+      for (var i = 0; i < parts.length; i++) if (parts[i].type === "currency") return parts[i].value;
+    } catch (e) {}
+    return ccy;
+  }
+  var SEC_SYMBOL = currencySymbol(locale, SECONDARY);
+
+  // Label + wire the secondary toggle button, and reveal the toggle.
+  var secBtn = document.querySelector("[data-fx-secondary]");
+  if (secBtn) {
+    secBtn.setAttribute("data-cur", SECONDARY);
+    secBtn.textContent = SEC_SYMBOL;
+  }
+  var toggle = document.querySelector("[data-fx-toggle]");
+  if (toggle) toggle.removeAttribute("hidden");
 
   // Initial currency: URL ?cur= (for previews) → saved choice → USD.
   var params = new URLSearchParams(window.location.search);
   var cur = (params.get("cur") || localStorage.getItem("fx-cur") || "USD").toUpperCase();
-  if (cur !== "BRL") cur = "USD";
-
-  var fmtBRL0 = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
+  if (cur !== SECONDARY) cur = "USD";
 
   function format(usd, short) {
-    if (cur === "BRL") return (short ? fmtBRL0 : fmtBRL).format(usd * rate);
+    if (cur === SECONDARY) return (short ? fmtSEC0 : fmtSEC).format(usd * rate);
     return (short ? fmtUSD0 : fmtUSD).format(usd);
   }
 
@@ -60,7 +85,7 @@
       var short = els[i].hasAttribute("data-usd-short");
       var neg = raw < 0;
       var s = format(Math.abs(raw), short);
-      // Preserve an explicit sign so "-$5" / "-R$ 5" read naturally.
+      // Preserve an explicit sign so "-$5" / "-<sym>5" read naturally.
       els[i].textContent = neg ? "-" + s : s;
     }
     // Toggle button active state.
@@ -73,18 +98,19 @@
     var ind = document.querySelector("[data-fx-rate]");
     if (ind) {
       var stamp = isLive ? "live" : (rateDate ? "as of " + String(rateDate).slice(0, 10) : "as of build");
-      ind.textContent = "US$ 1 = R$ " + rate.toFixed(3) + " · " + stamp;
+      ind.textContent = "US$ 1 = " + SEC_SYMBOL + " " + rate.toFixed(3) + " · " + stamp;
     }
 
-    // PPP orientation notes — only meaningful in BRL view, only on figures
-    // tagged data-ppp (goal / monthly budget). Hidden entirely in USD view.
-    var brl = cur === "BRL";
-    var stretch = rate / ppp; // how much further US$ goes inside the secondary region
+    // PPP orientation notes — only meaningful in the secondary view, and only if a
+    // PPP factor was configured. On figures tagged data-ppp (goal / monthly budget).
+    var sec = cur === SECONDARY;
     var notes = document.querySelectorAll("[data-ppp]");
     for (var k = 0; k < notes.length; k++) {
       var note = notes[k];
-      note.style.display = brl ? "" : "none";
-      if (!brl) continue;
+      var show = sec && ppp;
+      note.style.display = show ? "" : "none";
+      if (!show) continue;
+      var stretch = rate / ppp; // how much further US$ goes in the secondary economy
       var pppUsd = parseFloat(note.getAttribute("data-ppp-usd"));
       var valEl = note.querySelector("[data-ppp-value]");
       if (valEl && !isNaN(pppUsd)) {
@@ -94,7 +120,7 @@
   }
 
   function setCurrency(c) {
-    cur = c === "BRL" ? "BRL" : "USD";
+    cur = (c === SECONDARY) ? SECONDARY : "USD";
     try { localStorage.setItem("fx-cur", cur); } catch (e) {}
     render();
   }

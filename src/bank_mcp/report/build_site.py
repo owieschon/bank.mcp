@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """build_site.py — assemble the static private report site for Vercel.
 
-Fetches the live USD→BRL rate once (baked as the toggle's fallback), builds the
-weekly + monthly reports on real bank data, fills the dark landing page, and
-copies the toggle asset into a self-contained ./site directory. Static output —
-no framework, so a Vercel deploy spends ~no build minutes.
+Optionally fetches a live USD→secondary-currency rate once (baked as the toggle's
+fallback; USD-only unless REPORT_SECONDARY_CURRENCY is set), builds the weekly +
+monthly reports on real bank data, fills the dark landing page, and copies the
+toggle asset into a self-contained ./site directory. Static output — no framework,
+so a Vercel deploy spends ~no build minutes.
 
     python3 build_site.py [--balance 1000.00]
 
@@ -28,27 +29,52 @@ WEB = os.path.join(HERE, "web")          # bundled landing template + JS assets
 SITE = os.path.abspath("site")            # build output, written under the CWD
 # Fall back to the bundled example rules so a build runs on a clean clone.
 DEFAULT_RULES = os.path.join(HERE, "..", "data", "rules.demo.md")
-PPP_BR = 2.5  # World Bank PPP conversion factor for the example currency (LCU per intl $).
 
 
 log = logging.getLogger(__name__)
 
 
+def _secondary_currency():
+    """Optional secondary display currency for the report's USD↔X toggle, from env.
+
+    Unset → the report ships USD-only (no toggle), so the artifact carries no baked
+    locale. To enable, set REPORT_SECONDARY_CURRENCY (ISO code, e.g. EUR, GBP, JPY),
+    optionally REPORT_SECONDARY_LOCALE (default en-US) and REPORT_SECONDARY_PPP.
+    """
+    code = os.environ.get("REPORT_SECONDARY_CURRENCY", "").strip().upper()
+    if not code:
+        return None
+    return {
+        "ccy": code,
+        "locale": os.environ.get("REPORT_SECONDARY_LOCALE", "en-US"),
+        "ppp": float(os.environ.get("REPORT_SECONDARY_PPP", "0") or 0) or None,
+    }
+
+
 def fetch_fx():
-    """Live USD→BRL from a free, no-key source; falls back to a baked constant."""
+    """Live USD→<secondary> rate for the report's currency toggle, if one is configured.
+
+    Returns ``{"ccy": None}`` (USD-only) when no secondary currency is set or the live
+    fetch fails — never a guessed rate.
+    """
+    sec = _secondary_currency()
+    if not sec:
+        return {"ccy": None}
+    ccy = sec["ccy"]
     sources = [
-        ("https://open.er-api.com/v6/latest/USD", lambda d: d["rates"]["BRL"]),
-        ("https://api.frankfurter.dev/v1/latest?base=USD&symbols=BRL", lambda d: d["rates"]["BRL"]),
+        ("https://open.er-api.com/v6/latest/USD", lambda d: d["rates"][ccy]),
+        (f"https://api.frankfurter.dev/v1/latest?base=USD&symbols={ccy}", lambda d: d["rates"][ccy]),
     ]
     for url, pick in sources:
         try:
             with safehttp.fetch(url, timeout=12, retries=2) as r:
                 rate = float(pick(json.load(r)))
             if rate > 0:
-                return {"rate": round(rate, 4), "ppp": PPP_BR, "date": dt.date.today().isoformat()}
+                return {"rate": round(rate, 4), "ppp": sec["ppp"],
+                        "date": dt.date.today().isoformat(), "ccy": ccy, "locale": sec["locale"]}
         except Exception:
             continue
-    return {"rate": 5.07, "ppp": PPP_BR, "date": dt.date.today().isoformat()}
+    return {"ccy": None}
 
 
 def _digest(txns, balance, mode, fx, rules_path):
@@ -71,7 +97,8 @@ def _fill_landing(fx, as_of):
             .replace("{{WEEKLY_DATE}}", as_of or "—")
             .replace("{{MONTHLY_DATE}}", as_of or "—")
             .replace("{{SNAPSHOT_DATE}}", as_of or "—")
-            .replace("{{GENERATED}}", f"FX R$ {fx['rate']} · {fx['date']}"))
+            .replace("{{GENERATED}}",
+                     f"FX {fx['ccy']} {fx['rate']} · {fx['date']}" if fx.get("ccy") else (as_of or "—")))
 
 
 def _load_canonical_txns(json_path):
@@ -128,7 +155,10 @@ def main():
     txns = _load_canonical_txns(os.path.abspath(args.txns))
 
     fx = fetch_fx()
-    log.info("FX baked: US$1 = R$%s (ppp %s) on %s", fx["rate"], fx["ppp"], fx["date"])
+    if fx.get("ccy"):
+        log.info("FX baked: US$1 = %s %s (ppp %s) on %s", fx["ccy"], fx["rate"], fx["ppp"], fx["date"])
+    else:
+        log.info("report currency: USD only (set REPORT_SECONDARY_CURRENCY to enable a toggle)")
 
     # One unified live snapshot (weekly/monthly collapsed). Monthly mode builds
     # the full data (month-by-month history + category breakdown).
