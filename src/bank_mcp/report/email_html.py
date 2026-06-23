@@ -753,7 +753,7 @@ def render_digest_html(digest):
 <td style="font-family:Georgia,'Times New Roman',serif;font-size:21px;font-weight:700;color:#15171C;">
 <span style="color:#009C53;">&#10022;</span>&nbsp;Savings&nbsp;Goal&nbsp; <span style="font-family:'SF Mono',Consolas,monospace;font-size:11px;font-weight:400;color:#9aa0ab;">bank.mcp</span></td>
 <td style="text-align:right;vertical-align:middle;">
-<span style="background-color:#E6F4EC;color:#008542;font-size:11px;font-weight:700;padding:4px 10px;border-radius:11px;">&#128274; Private</span></td>
+<span style="background-color:#E6F4EC;color:#00803F;font-size:11px;font-weight:700;padding:4px 10px;border-radius:11px;">&#128274; Private</span></td>
 </tr>
 </table>
 </td></tr>

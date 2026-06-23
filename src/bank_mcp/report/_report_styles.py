@@ -6,9 +6,9 @@ module is logic, not an 800-line stylesheet. Imported back by digest_templates.
 
 _CSS = """\
   :root {
-    /* YOUNG & VIBRANT — modern-fintech energy. Saturated, confident color used
-       intentionally (not traffic-light defaults). Crisp near-white base, high
-       contrast, bold display type. Token names kept so rules recolor in place. */
+    /* Design tokens. Saturated, confident color (not traffic-light defaults), a
+       crisp near-white base, high contrast, bold display type. Token names are stable
+       so rules recolor in place. */
     --red: #F0473E;            /* warm alert red — risk/deficit (used sparingly) */
     --red-bg: #FEE4E2;
     --red-border: #FBBFBA;
@@ -637,7 +637,7 @@ _CSS = """\
   .fx-seg button.is-active { background: var(--green); color: #fff; box-shadow: 0 1px 4px rgba(0,166,81,0.45); }
 
   /* ── PPP orientation notes (secondary-currency view only; toggled by currency.js) ── */
-  .ppp-note { margin: 10px 0 2px; padding: 9px 13px; background: var(--green-bg); border-left: 2.5px solid var(--green); border-radius: 0 8px 8px 0; font-size: 12px; color: var(--green-deep, #008542); line-height: 1.45; }
+  .ppp-note { margin: 10px 0 2px; padding: 9px 13px; background: var(--green-bg); border-left: 2.5px solid var(--green); border-radius: 0 8px 8px 0; font-size: 12px; color: var(--green-deep, #00803F); line-height: 1.45; }
   .ppp-note [data-ppp-value] { font-family: var(--mono); font-weight: 700; }
   .ppp-note .src { color: var(--text-tertiary); font-size: 11px; }
   .ppp-caveat { margin-top: 10px; font-size: 11px; color: var(--text-tertiary); font-style: italic; }
@@ -665,7 +665,7 @@ _CSS = """\
   .brandbar-mono { font-family: var(--sans); font-size: 11px; font-weight: 500; color: var(--text-faint); margin-left: 8px; letter-spacing: 0.02em; }
   .brandbar-private {
     margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
-    font-size: 11px; font-weight: 500; color: var(--green-deep, #008542);
+    font-size: 11px; font-weight: 500; color: var(--green-deep, #00803F);
     background: var(--green-bg); border: 1px solid var(--green-border);
     padding: 4px 11px; border-radius: 999px;
   }
@@ -678,7 +678,7 @@ _CSS = """\
   }
   .report-eyebrow::before { content: ''; width: 18px; height: 1.5px; background: var(--green); display: inline-block; }
   .report-header h2 { font-family: var(--serif); font-size: 38px; line-height: 1.08; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); }
-  .report-header h2 em { font-style: italic; color: var(--green-deep, #008542); }
+  .report-header h2 em { font-style: italic; color: var(--green-deep, #00803F); }
   .report-header .report-meta { font-size: 13px; color: var(--text-tertiary); margin-top: 12px; }
 
   /* Sections become soft paper cards instead of accordion rows */
@@ -705,7 +705,7 @@ _CSS = """\
   .kv-row { padding: 11px 0; border-bottom-color: var(--line-soft, #EFF1EA); font-size: 13.5px; }
   .kv-key { color: var(--text-secondary); }
 
-  /* Footer: match the landing (serif wordmark + flag rule) */
+  /* Footer: match the landing (serif wordmark + accent rule) */
   .report-footer { text-align: left; padding: 26px 4px 0; margin-top: 30px; border-top: 1px solid var(--line, #E6E9E1); }
   .report-footer > div:first-child { display: none; }
   .footer-brand { font-family: var(--serif); font-size: 14px; color: var(--text-secondary); }
@@ -735,7 +735,7 @@ _CSS = """\
   /* Forward-plan callout (forecast runs on the plan, not past habits) */
   .plan-note { margin: 4px 0 18px; padding: 11px 14px; background: var(--green-bg); border-left: 2.5px solid var(--green); border-radius: 0 8px 8px 0; font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; }
   .plan-note strong { color: var(--text-primary); font-weight: 600; }
-  .freed-note { margin-top: 10px; font-size: 12px; color: var(--green-deep, #008542); }
+  .freed-note { margin-top: 10px; font-size: 12px; color: var(--green-deep, #00803F); }
 
   /* Where your money goes — split bar + ranked category bars + kind chips */
   .split-bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }

@@ -164,7 +164,7 @@ def _report_brandbar(digest, mode):
     return """\
     <div class="brandbar">
       <svg class="spark" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <g stroke="#00A651" stroke-width="2.1" stroke-linecap="round">
+        <g stroke="#009C53" stroke-width="2.1" stroke-linecap="round">
           <path d="M12 2.5v6"/><path d="M12 15.5v6"/><path d="M2.5 12h6"/><path d="M15.5 12h6"/>
         </g>
         <g stroke="#FFCB00" stroke-width="2.1" stroke-linecap="round">
@@ -174,7 +174,7 @@ def _report_brandbar(digest, mode):
       </svg>
       <div class="brandbar-word">Savings Goal<span class="brandbar-mono">bank.mcp</span></div>
       <span class="brandbar-private">
-        <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M4 7V5a4 4 0 0 1 8 0v2" stroke="#008542" stroke-width="1.5"/><rect x="3" y="7" width="10" height="7" rx="1.5" fill="#00A651"/></svg>
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M4 7V5a4 4 0 0 1 8 0v2" stroke="#00803F" stroke-width="1.5"/><rect x="3" y="7" width="10" height="7" rx="1.5" fill="#009C53"/></svg>
         Private
       </span>
     </div>

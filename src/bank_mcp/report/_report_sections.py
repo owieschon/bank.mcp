@@ -57,7 +57,7 @@ def _build_balance_trajectory_svg(digest):
     def X(i): return L + (R - L) * (i / (n - 1))
     def Y(v): return T + (Bm - T) * (1 - (v - vmin) / span)
 
-    GREEN, AMBER, RED, GREY = "#00A651", "#E0A500", "#E04A2F", "#D8D2C2"
+    GREEN, AMBER, RED, GREY = "#009C53", "#E0A500", "#E04A2F", "#D8D2C2"
     def zone(b): return GREEN if b >= buffer else (AMBER if b >= 0 else RED)
 
     y0, yb = Y(0), Y(buffer)
