@@ -48,7 +48,6 @@ CREATE TABLE IF NOT EXISTS transactions (
   description   TEXT,
   reference     TEXT,
   category_raw  TEXT,
-  category_human TEXT,
   pending       INTEGER NOT NULL DEFAULT 0,
   raw           TEXT,
   ingested_at   TEXT NOT NULL
@@ -64,11 +63,6 @@ CREATE TABLE IF NOT EXISTS merchant_overrides (
 CREATE TABLE IF NOT EXISTS fx_rates (
   day TEXT NOT NULL, base TEXT NOT NULL, quote TEXT NOT NULL,
   rate REAL NOT NULL, PRIMARY KEY (day, base, quote)
-);
-CREATE TABLE IF NOT EXISTS envelopes (
-  name TEXT NOT NULL, owner TEXT NOT NULL, period TEXT NOT NULL,
-  allocated REAL NOT NULL, currency TEXT NOT NULL,
-  PRIMARY KEY (name, owner, period)
 );
 """
 
@@ -152,7 +146,6 @@ def upsert_transactions(conn, txns, ingested_at=None):
             t.get("description"),
             t.get("reference"),
             t.get("category"),
-            None,                       # category_human: reserved (populated by the override path)
             1 if sc.raw(t).get("pending") else 0,
             json.dumps(t),              # lossless: read adapter reconstructs the exact dict
             ts,
@@ -169,13 +162,13 @@ def upsert_transactions(conn, txns, ingested_at=None):
         q = "SELECT id, raw FROM transactions WHERE id IN (%s)" % ",".join("?" * len(chunk))
         existing.update({row["id"]: row["raw"] for row in conn.execute(q, chunk)})
     added = sum(1 for r in rows if r[0] not in existing)
-    modified = sum(1 for r in rows if r[0] in existing and existing[r[0]] != r[13])
+    modified = sum(1 for r in rows if r[0] in existing and existing[r[0]] != r[12])
 
     conn.executemany(
         """INSERT INTO transactions
              (id, account_id, owner, date, amount, direction, currency, merchant_name,
-              description, reference, category_raw, category_human, pending, raw, ingested_at)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+              description, reference, category_raw, pending, raw, ingested_at)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
            ON CONFLICT(id) DO UPDATE SET
              account_id=excluded.account_id, owner=excluded.owner, date=excluded.date,
              amount=excluded.amount, direction=excluded.direction, currency=excluded.currency,
