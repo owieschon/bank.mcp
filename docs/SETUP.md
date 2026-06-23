@@ -52,7 +52,7 @@ is ever committed. To wire it up:
    cp examples/plaid_items.example.json  plaid_items.json
    ```
 2. Connect a bank. Transport lives in `src/finance_mcp/ingest/`:
-   - a [bank-mcp](https://github.com/owieschon/bank.mcp) subprocess fork (reads its own
+   - a bank-mcp subprocess fork (reads its own
      `~/.bank-mcp/config.json`), or
    - direct Plaid — set `PLAID_ACCESS_TOKEN` (env var or macOS Keychain). Mint a token
      for a new bank Item with `python -m finance_mcp.ingest.plaid_link`.

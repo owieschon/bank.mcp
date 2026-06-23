@@ -82,7 +82,7 @@ python -m finance_mcp.report.build_site --balance 1200 --txns path/to/transactio
 
 See [docs/SETUP.md](docs/SETUP.md). In short: copy the `examples/*.example.*`
 templates to real filenames, point the loaders at them, and connect a bank via
-Plaid / [bank-mcp](https://github.com/owieschon/bank.mcp) (transport lives in `ingest/`). Real data
+Plaid / a bank-mcp subprocess fork (transport lives in `ingest/`). Real data
 files are gitignored by default.
 
 ## Docs
