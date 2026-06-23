@@ -1,0 +1,68 @@
+[
+  {
+    "thread_id": "thread_0001",
+    "merchant": "Cloud Hosting",
+    "amount": 35.00,
+    "date": "2026-01-12",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "subject": "Your Cloud Hosting receipt",
+    "from": "billing@example-hosting.com",
+    "snippet": "Cloud Hosting monthly plan $35.00",
+    "type": "receipt"
+  },
+  {
+    "thread_id": "thread_0002",
+    "merchant": "AI Assistant",
+    "amount": 20.00,
+    "date": "2026-01-12",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "subject": "Receipt #XXXX-0001",
+    "from": "invoice@example-ai.com",
+    "snippet": "AI Assistant subscription $20.00",
+    "type": "receipt"
+  },
+  {
+    "thread_id": "thread_0003",
+    "merchant": "Corner Cafe",
+    "amount": 18.50,
+    "date": "2026-01-11",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "subject": "Your order receipt",
+    "from": "noreply@example-orders.com",
+    "snippet": "Corner Cafe pickup order. Total $18.50",
+    "type": "receipt"
+  },
+  {
+    "thread_id": "thread_0004",
+    "merchant": "Online Store",
+    "amount": 42.16,
+    "date": "2026-01-09",
+    "category": "GENERAL_MERCHANDISE",
+    "subject": "Order confirmation #XXXX-0002",
+    "from": "orders@example-store.com",
+    "snippet": "Order total $42.16, payment via acct_TEST00000000",
+    "type": "receipt"
+  },
+  {
+    "thread_id": "thread_0005",
+    "merchant": "Music Streaming",
+    "amount": 11.99,
+    "date": "2026-01-05",
+    "category": "ENTERTAINMENT",
+    "subject": "Your monthly receipt",
+    "from": "receipts@example-music.com",
+    "snippet": "Music Streaming Premium $11.99/month",
+    "type": "receipt"
+  },
+  {
+    "thread_id": "thread_0006",
+    "merchant": "Grocery Market",
+    "amount": 76.43,
+    "date": "2026-01-04",
+    "category": "GENERAL_MERCHANDISE_SUPERMARKET",
+    "subject": "eReceipt from Grocery Market",
+    "from": "ereceipt@example-grocery.com",
+    "snippet": "Grocery Market purchase $76.43",
+    "type": "receipt"
+  }
+]

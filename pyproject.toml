@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finance-mcp"
+description = "A deterministic personal-finance analysis suite (stdlib-only; LLMs only narrate)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "finance.mcp contributors" }]
+keywords = ["personal-finance", "plaid", "budgeting", "cash-flow"]
+# Runtime dependencies: NONE. The suite runs on the Python standard library only.
+dependencies = []
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+finance-mcp = "finance_mcp.__main__:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "finance_mcp.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"finance_mcp" = ["data/*.md", "data/*.json"]
+"finance_mcp.report" = ["web/*.html", "web/assets/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# Correctness-focused: pyflakes (unused/undefined/real errors) + syntax errors.
+# Stylistic multi-statement rules (E701/E702) are intentionally not enforced —
+# the HTTP handlers and a few hot loops use compact one-liners deliberately.
+select = ["F", "E9"]

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>finance.mcp — Private Reports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Bricolage Grotesque: modern characterful display · Inter: clean grotesque body -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* --- Claude paper aesthetic, lifted brighter & fresher --- */
+    --paper:      #FBFAF3;   /* clean warm white page */
+    --surface:    #FFFFFF;   /* crisp card */
+    --surface-2:  #EEFBF1;   /* fresh mint icon wells */
+    --ink:        #18201B;   /* deep green-black */
+    --ink-soft:   #4C5650;
+    --ink-faint:  #8A938B;
+    --line:       #E6E9E1;   /* cool-warm hairline */
+    --line-soft:  #EFF1EA;
+
+    /* --- regional palette — vibrant, tropical, fresh --- */
+    --green:      #009C53;   /* the secondary region green — primary accent */
+    --green-deep: #00803F;
+    --green-bright:#00E676;  /* electric grass green for fills/hover */
+    --green-bg:   #D4F4E2;
+    --green-line: #8FE3B6;
+    --gold:       #C98A00;   /* gold (text-safe) */
+    --gold-bright:#F2B705;   /* flag gold for dots/fills */
+    --gold-bg:    #FFF3CC;
+    --gold-line:  #FBE08A;
+    --blue:       #1E50C8;   /* the secondary region blue — links/info */
+    --blue-bg:    #DEE7FB;
+    --danger:     #F0473E;   /* alert red for risk */
+    --danger-bg:  #FEE4E2;
+    --danger-line:#FBBFBA;
+
+    --radius:     14px;
+    --radius-sm:  9px;
+    --serif: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.55;
+    padding: 56px 20px 64px;
+  }
+
+  .wrap { max-width: 600px; margin: 0 auto; }
+
+  /* ---- Masthead ---- */
+  .brandbar {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 40px;
+  }
+  .spark { flex-shrink: 0; }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 19px; font-weight: 500;
+    letter-spacing: -0.01em; color: var(--ink);
+  }
+  .wordmark .mono {
+    font-family: var(--sans); font-size: 11px; font-weight: 500;
+    color: var(--ink-faint); margin-left: 8px; letter-spacing: 0.02em;
+  }
+  .privacy-tag {
+    margin-left: auto;
+    font-size: 11px; font-weight: 500; color: var(--green-deep);
+    background: var(--green-bg); border: 1px solid var(--green-line);
+    padding: 4px 11px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .privacy-tag .lock { width: 10px; height: 10px; }
+
+  /* ---- Hero ---- */
+  .hero { margin-bottom: 38px; }
+  .hero .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--green); text-transform: none; margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 7px;
+  }
+  .hero .eyebrow::before {
+    content: ''; width: 18px; height: 1.5px; background: var(--green); display: inline-block;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 42px; line-height: 1.08; font-weight: 500;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--green-deep);
+  }
+  .hero p {
+    color: var(--ink-soft); font-size: 15.5px; margin-top: 16px;
+    max-width: 32em;
+  }
+
+  /* ---- Report list ---- */
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-faint);
+    margin: 0 4px 14px;
+  }
+
+  .report-card {
+    display: flex; align-items: center; gap: 18px;
+    padding: 20px 22px; margin-bottom: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    text-decoration: none; color: inherit;
+    transition: transform 0.16s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .report-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -14px rgba(0,156,83,0.35);
+    border-color: var(--green-bright);
+  }
+
+  .card-icon {
+    flex-shrink: 0; width: 46px; height: 46px;
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--surface-2);
+    border: 1px solid var(--line-soft);
+  }
+  .card-icon svg { display: block; }
+
+  .card-main { flex: 1; min-width: 0; }
+  .card-title {
+    font-family: var(--serif);
+    font-weight: 500; font-size: 18px; color: var(--ink);
+    letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card-desc { color: var(--ink-faint); font-size: 13px; margin-top: 4px; }
+  .card-meta {
+    font-family: var(--sans); font-size: 11px; font-weight: 500;
+    color: var(--ink-faint); margin-top: 9px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .chip {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.03em;
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip-danger { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger-line); }
+  .chip-gold   { background: var(--gold-bg);   color: var(--gold);   border: 1px solid var(--gold-line); }
+  .chip-green  { background: var(--green-bg);  color: var(--green-deep); border: 1px solid var(--green-line); }
+
+  .card-arrow { flex-shrink: 0; color: var(--ink-faint); transition: transform 0.16s ease, color 0.16s ease; }
+  .report-card:hover .card-arrow { transform: translateX(4px); color: var(--green); }
+
+  /* ---- Footer ---- */
+  .footer {
+    margin-top: 44px; padding-top: 22px;
+    border-top: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .footer .brand { font-family: var(--serif); font-size: 13px; color: var(--ink-soft); }
+  .footer .meta { font-size: 11px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .flag-rule { display: flex; gap: 4px; margin-top: 2px; }
+  .flag-rule span { width: 22px; height: 3px; border-radius: 2px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Masthead -->
+    <div class="brandbar">
+      <!-- Sunburst spark (Claude motif) in regional green -->
+      <svg class="spark" width="27" height="27" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <g stroke="#009C53" stroke-width="2.1" stroke-linecap="round">
+          <path d="M12 2.5v6"/><path d="M12 15.5v6"/>
+          <path d="M2.5 12h6"/><path d="M15.5 12h6"/>
+        </g>
+        <g stroke="#F2B705" stroke-width="2.1" stroke-linecap="round">
+          <path d="M5.2 5.2l4.2 4.2"/><path d="M14.6 14.6l4.2 4.2"/>
+          <path d="M18.8 5.2l-4.2 4.2"/><path d="M9.4 14.6l-4.2 4.2"/>
+        </g>
+        <circle cx="12" cy="12" r="2.3" fill="#1E50C8"/>
+      </svg>
+      <div class="wordmark">Savings Goal<span class="mono">finance.mcp</span></div>
+      <span class="privacy-tag">
+        <svg class="lock" viewBox="0 0 16 16" fill="none"><path d="M4 7V5a4 4 0 0 1 8 0v2" stroke="#00803F" stroke-width="1.5"/><rect x="3" y="7" width="10" height="7" rx="1.5" fill="#009C53"/></svg>
+        Private
+      </span>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="eyebrow">Latest digest</div>
+      <h1>How you're <em>doing.</em></h1>
+      <p>Deterministic analysis of your bank activity — cash-flow forecast, savings pace toward your goal, fee &amp; fraud scan, and receipt reconciliation. No AI in the numbers.</p>
+    </div>
+
+    <!-- One live snapshot -->
+    <div class="section-label">Your snapshot</div>
+
+    <a href="report.html" class="report-card">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V11M9 19V6M14 19V14M19 19V8" stroke="#009C53" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="card-main">
+        <div class="card-title">Open your snapshot</div>
+        <div class="card-desc">Forecast · month-by-month · where your money goes · savings pace</div>
+        <div class="card-meta">As of {{SNAPSHOT_DATE}}</div>
+      </div>
+      <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div>
+        <div class="brand">finance.mcp</div>
+        <div class="flag-rule"><span style="background:#009C53"></span><span style="background:#F2B705"></span><span style="background:#1E50C8"></span></div>
+      </div>
+      <div class="meta">Private · Vercel-authenticated · {{GENERATED}}</div>
+    </div>
+
+  </div>
+</body>
+</html>

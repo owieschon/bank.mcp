@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Example launchd agent (macOS). Runs daily.sh every day at 6:30 AM to sync the
+  bank, analyze on the live balance, email the digest, and refresh the private
+  web report.
+
+  This is a TEMPLATE: replace /path/to/finance-mcp and /path/to/logs with real
+  absolute paths before installing.
+
+  Install:
+    cp com.example.finance-daily.plist ~/Library/LaunchAgents/
+    launchctl unload ~/Library/LaunchAgents/com.example.finance-daily.plist 2>/dev/null
+    launchctl load   ~/Library/LaunchAgents/com.example.finance-daily.plist
+
+  Test now:   launchctl start com.example.finance-daily
+  Uninstall:  launchctl unload ~/Library/LaunchAgents/com.example.finance-daily.plist
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.example.finance-daily</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/path/to/finance-mcp/ops/daily.sh</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/path/to/finance-mcp</string>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>6</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/path/to/logs/finance-daily.log</string>
+  <key>StandardErrorPath</key>
+  <string>/path/to/logs/finance-daily.log</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+</dict>
+</plist>

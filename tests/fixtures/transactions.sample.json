@@ -1,0 +1,1980 @@
+[
+  {
+    "id": "t0001",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-01-01",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0001",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-01-01",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0047",
+    "accountId": "acct_demo",
+    "amount": -95.51,
+    "date": "2026-01-04",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0047",
+      "account_id": "acct_demo",
+      "amount": 95.51,
+      "date": "2026-01-04",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0070",
+    "accountId": "acct_demo",
+    "amount": -35.0,
+    "date": "2026-01-06",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0070",
+      "account_id": "acct_demo",
+      "amount": 35.0,
+      "date": "2026-01-06",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0077",
+    "accountId": "acct_demo",
+    "amount": -32.47,
+    "date": "2026-01-06",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0077",
+      "account_id": "acct_demo",
+      "amount": 32.47,
+      "date": "2026-01-06",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0002",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-01-08",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0002",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-01-08",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0048",
+    "accountId": "acct_demo",
+    "amount": -92.22,
+    "date": "2026-01-11",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0048",
+      "account_id": "acct_demo",
+      "amount": 92.22,
+      "date": "2026-01-11",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0079",
+    "accountId": "acct_demo",
+    "amount": -39.65,
+    "date": "2026-01-11",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0079",
+      "account_id": "acct_demo",
+      "amount": 39.65,
+      "date": "2026-01-11",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0067",
+    "accountId": "acct_demo",
+    "amount": -22.06,
+    "date": "2026-01-12",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0067",
+      "account_id": "acct_demo",
+      "amount": 22.06,
+      "date": "2026-01-12",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0003",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-01-15",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0003",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-01-15",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0049",
+    "accountId": "acct_demo",
+    "amount": -104.07,
+    "date": "2026-01-18",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0049",
+      "account_id": "acct_demo",
+      "amount": 104.07,
+      "date": "2026-01-18",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0004",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-01-22",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0004",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-01-22",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0050",
+    "accountId": "acct_demo",
+    "amount": -59.78,
+    "date": "2026-01-25",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0050",
+      "account_id": "acct_demo",
+      "amount": 59.78,
+      "date": "2026-01-25",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0076",
+    "accountId": "acct_demo",
+    "amount": -34.07,
+    "date": "2026-01-25",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0076",
+      "account_id": "acct_demo",
+      "amount": 34.07,
+      "date": "2026-01-25",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0046",
+    "accountId": "acct_demo",
+    "amount": -285.0,
+    "date": "2026-01-26",
+    "type": "debit",
+    "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+    "merchantName": "Car Loan",
+    "description": "Car Loan",
+    "pending": false,
+    "rawData": {
+      "id": "t0046",
+      "account_id": "acct_demo",
+      "amount": 285.0,
+      "date": "2026-01-26",
+      "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+      "personal_finance_category": {
+        "detailed": "LOAN_PAYMENTS_CAR_PAYMENT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0005",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-01-29",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0005",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-01-29",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0042",
+    "accountId": "acct_demo",
+    "amount": -33.23,
+    "date": "2026-01-29",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Cloud Hosting",
+    "description": "Cloud Hosting",
+    "pending": false,
+    "rawData": {
+      "id": "t0042",
+      "account_id": "acct_demo",
+      "amount": 33.23,
+      "date": "2026-01-29",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0034",
+    "accountId": "acct_demo",
+    "amount": -20.0,
+    "date": "2026-01-31",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "AI Assistant",
+    "description": "AI Assistant",
+    "pending": false,
+    "rawData": {
+      "id": "t0034",
+      "account_id": "acct_demo",
+      "amount": 20.0,
+      "date": "2026-01-31",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0035",
+    "accountId": "acct_demo",
+    "amount": -45.0,
+    "date": "2026-01-31",
+    "type": "debit",
+    "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+    "merchantName": "Phone Plan",
+    "description": "Phone Plan",
+    "pending": false,
+    "rawData": {
+      "id": "t0035",
+      "account_id": "acct_demo",
+      "amount": 45.0,
+      "date": "2026-01-31",
+      "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+      "personal_finance_category": {
+        "detailed": "GENERAL_SERVICES_TELECOMMUNICATIONS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0036",
+    "accountId": "acct_demo",
+    "amount": -30.0,
+    "date": "2026-01-31",
+    "type": "debit",
+    "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+    "merchantName": "Gym",
+    "description": "Gym",
+    "pending": false,
+    "rawData": {
+      "id": "t0036",
+      "account_id": "acct_demo",
+      "amount": 30.0,
+      "date": "2026-01-31",
+      "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+      "personal_finance_category": {
+        "detailed": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0037",
+    "accountId": "acct_demo",
+    "amount": -11.99,
+    "date": "2026-01-31",
+    "type": "debit",
+    "category": "ENTERTAINMENT_STREAMING",
+    "merchantName": "Music Streaming",
+    "description": "Music Streaming",
+    "pending": false,
+    "rawData": {
+      "id": "t0037",
+      "account_id": "acct_demo",
+      "amount": 11.99,
+      "date": "2026-01-31",
+      "category": "ENTERTAINMENT_STREAMING",
+      "personal_finance_category": {
+        "detailed": "ENTERTAINMENT_STREAMING"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0038",
+    "accountId": "acct_demo",
+    "amount": -5.0,
+    "date": "2026-01-31",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Newsletter",
+    "description": "Newsletter",
+    "pending": false,
+    "rawData": {
+      "id": "t0038",
+      "account_id": "acct_demo",
+      "amount": 5.0,
+      "date": "2026-01-31",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0051",
+    "accountId": "acct_demo",
+    "amount": -78.21,
+    "date": "2026-02-01",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0051",
+      "account_id": "acct_demo",
+      "amount": 78.21,
+      "date": "2026-02-01",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0006",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-02-05",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0006",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-02-05",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0065",
+    "accountId": "acct_demo",
+    "amount": -13.75,
+    "date": "2026-02-05",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0065",
+      "account_id": "acct_demo",
+      "amount": 13.75,
+      "date": "2026-02-05",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0081",
+    "accountId": "acct_demo",
+    "amount": -24.78,
+    "date": "2026-02-05",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0081",
+      "account_id": "acct_demo",
+      "amount": 24.78,
+      "date": "2026-02-05",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0052",
+    "accountId": "acct_demo",
+    "amount": -56.64,
+    "date": "2026-02-08",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0052",
+      "account_id": "acct_demo",
+      "amount": 56.64,
+      "date": "2026-02-08",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0007",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-02-12",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0007",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-02-12",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0053",
+    "accountId": "acct_demo",
+    "amount": -67.03,
+    "date": "2026-02-15",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0053",
+      "account_id": "acct_demo",
+      "amount": 67.03,
+      "date": "2026-02-15",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0068",
+    "accountId": "acct_demo",
+    "amount": -39.36,
+    "date": "2026-02-15",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0068",
+      "account_id": "acct_demo",
+      "amount": 39.36,
+      "date": "2026-02-15",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0008",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-02-19",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0008",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-02-19",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0054",
+    "accountId": "acct_demo",
+    "amount": -82.79,
+    "date": "2026-02-22",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0054",
+      "account_id": "acct_demo",
+      "amount": 82.79,
+      "date": "2026-02-22",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0045",
+    "accountId": "acct_demo",
+    "amount": -285.0,
+    "date": "2026-02-25",
+    "type": "debit",
+    "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+    "merchantName": "Car Loan",
+    "description": "Car Loan",
+    "pending": false,
+    "rawData": {
+      "id": "t0045",
+      "account_id": "acct_demo",
+      "amount": 285.0,
+      "date": "2026-02-25",
+      "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+      "personal_finance_category": {
+        "detailed": "LOAN_PAYMENTS_CAR_PAYMENT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0009",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-02-26",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0009",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-02-26",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0041",
+    "accountId": "acct_demo",
+    "amount": -33.75,
+    "date": "2026-02-28",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Cloud Hosting",
+    "description": "Cloud Hosting",
+    "pending": false,
+    "rawData": {
+      "id": "t0041",
+      "account_id": "acct_demo",
+      "amount": 33.75,
+      "date": "2026-02-28",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0055",
+    "accountId": "acct_demo",
+    "amount": -56.46,
+    "date": "2026-03-01",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0055",
+      "account_id": "acct_demo",
+      "amount": 56.46,
+      "date": "2026-03-01",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0029",
+    "accountId": "acct_demo",
+    "amount": -20.0,
+    "date": "2026-03-02",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "AI Assistant",
+    "description": "AI Assistant",
+    "pending": false,
+    "rawData": {
+      "id": "t0029",
+      "account_id": "acct_demo",
+      "amount": 20.0,
+      "date": "2026-03-02",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0030",
+    "accountId": "acct_demo",
+    "amount": -45.0,
+    "date": "2026-03-02",
+    "type": "debit",
+    "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+    "merchantName": "Phone Plan",
+    "description": "Phone Plan",
+    "pending": false,
+    "rawData": {
+      "id": "t0030",
+      "account_id": "acct_demo",
+      "amount": 45.0,
+      "date": "2026-03-02",
+      "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+      "personal_finance_category": {
+        "detailed": "GENERAL_SERVICES_TELECOMMUNICATIONS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0031",
+    "accountId": "acct_demo",
+    "amount": -30.0,
+    "date": "2026-03-02",
+    "type": "debit",
+    "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+    "merchantName": "Gym",
+    "description": "Gym",
+    "pending": false,
+    "rawData": {
+      "id": "t0031",
+      "account_id": "acct_demo",
+      "amount": 30.0,
+      "date": "2026-03-02",
+      "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+      "personal_finance_category": {
+        "detailed": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0032",
+    "accountId": "acct_demo",
+    "amount": -11.99,
+    "date": "2026-03-02",
+    "type": "debit",
+    "category": "ENTERTAINMENT_STREAMING",
+    "merchantName": "Music Streaming",
+    "description": "Music Streaming",
+    "pending": false,
+    "rawData": {
+      "id": "t0032",
+      "account_id": "acct_demo",
+      "amount": 11.99,
+      "date": "2026-03-02",
+      "category": "ENTERTAINMENT_STREAMING",
+      "personal_finance_category": {
+        "detailed": "ENTERTAINMENT_STREAMING"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0033",
+    "accountId": "acct_demo",
+    "amount": -5.0,
+    "date": "2026-03-02",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Newsletter",
+    "description": "Newsletter",
+    "pending": false,
+    "rawData": {
+      "id": "t0033",
+      "account_id": "acct_demo",
+      "amount": 5.0,
+      "date": "2026-03-02",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0010",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-03-05",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0010",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-03-05",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0056",
+    "accountId": "acct_demo",
+    "amount": -65.94,
+    "date": "2026-03-08",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0056",
+      "account_id": "acct_demo",
+      "amount": 65.94,
+      "date": "2026-03-08",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0071",
+    "accountId": "acct_demo",
+    "amount": -12.62,
+    "date": "2026-03-10",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0071",
+      "account_id": "acct_demo",
+      "amount": 12.62,
+      "date": "2026-03-10",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0011",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-03-12",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0011",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-03-12",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0073",
+    "accountId": "acct_demo",
+    "amount": -18.85,
+    "date": "2026-03-12",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0073",
+      "account_id": "acct_demo",
+      "amount": 18.85,
+      "date": "2026-03-12",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0057",
+    "accountId": "acct_demo",
+    "amount": -90.74,
+    "date": "2026-03-15",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0057",
+      "account_id": "acct_demo",
+      "amount": 90.74,
+      "date": "2026-03-15",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0012",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-03-19",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0012",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-03-19",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0069",
+    "accountId": "acct_demo",
+    "amount": -17.79,
+    "date": "2026-03-19",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0069",
+      "account_id": "acct_demo",
+      "amount": 17.79,
+      "date": "2026-03-19",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0058",
+    "accountId": "acct_demo",
+    "amount": -84.97,
+    "date": "2026-03-22",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0058",
+      "account_id": "acct_demo",
+      "amount": 84.97,
+      "date": "2026-03-22",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0074",
+    "accountId": "acct_demo",
+    "amount": -30.89,
+    "date": "2026-03-22",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0074",
+      "account_id": "acct_demo",
+      "amount": 30.89,
+      "date": "2026-03-22",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0082",
+    "accountId": "acct_demo",
+    "amount": -4.95,
+    "date": "2026-03-22",
+    "type": "debit",
+    "category": "BANK_FEES_OVERDRAFT_FEES",
+    "merchantName": "Monthly Service Fee",
+    "description": "Monthly Service Fee",
+    "pending": false,
+    "rawData": {
+      "id": "t0082",
+      "account_id": "acct_demo",
+      "amount": 4.95,
+      "date": "2026-03-22",
+      "category": "BANK_FEES_OVERDRAFT_FEES",
+      "personal_finance_category": {
+        "detailed": "BANK_FEES_OVERDRAFT_FEES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0013",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-03-26",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0013",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-03-26",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0044",
+    "accountId": "acct_demo",
+    "amount": -285.0,
+    "date": "2026-03-27",
+    "type": "debit",
+    "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+    "merchantName": "Car Loan",
+    "description": "Car Loan",
+    "pending": false,
+    "rawData": {
+      "id": "t0044",
+      "account_id": "acct_demo",
+      "amount": 285.0,
+      "date": "2026-03-27",
+      "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+      "personal_finance_category": {
+        "detailed": "LOAN_PAYMENTS_CAR_PAYMENT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0059",
+    "accountId": "acct_demo",
+    "amount": -67.12,
+    "date": "2026-03-29",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0059",
+      "account_id": "acct_demo",
+      "amount": 67.12,
+      "date": "2026-03-29",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0040",
+    "accountId": "acct_demo",
+    "amount": -31.25,
+    "date": "2026-03-30",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Cloud Hosting",
+    "description": "Cloud Hosting",
+    "pending": false,
+    "rawData": {
+      "id": "t0040",
+      "account_id": "acct_demo",
+      "amount": 31.25,
+      "date": "2026-03-30",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0064",
+    "accountId": "acct_demo",
+    "amount": -23.64,
+    "date": "2026-03-31",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0064",
+      "account_id": "acct_demo",
+      "amount": 23.64,
+      "date": "2026-03-31",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0024",
+    "accountId": "acct_demo",
+    "amount": -20.0,
+    "date": "2026-04-01",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "AI Assistant",
+    "description": "AI Assistant",
+    "pending": false,
+    "rawData": {
+      "id": "t0024",
+      "account_id": "acct_demo",
+      "amount": 20.0,
+      "date": "2026-04-01",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0025",
+    "accountId": "acct_demo",
+    "amount": -45.0,
+    "date": "2026-04-01",
+    "type": "debit",
+    "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+    "merchantName": "Phone Plan",
+    "description": "Phone Plan",
+    "pending": false,
+    "rawData": {
+      "id": "t0025",
+      "account_id": "acct_demo",
+      "amount": 45.0,
+      "date": "2026-04-01",
+      "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+      "personal_finance_category": {
+        "detailed": "GENERAL_SERVICES_TELECOMMUNICATIONS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0026",
+    "accountId": "acct_demo",
+    "amount": -30.0,
+    "date": "2026-04-01",
+    "type": "debit",
+    "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+    "merchantName": "Gym",
+    "description": "Gym",
+    "pending": false,
+    "rawData": {
+      "id": "t0026",
+      "account_id": "acct_demo",
+      "amount": 30.0,
+      "date": "2026-04-01",
+      "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+      "personal_finance_category": {
+        "detailed": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0027",
+    "accountId": "acct_demo",
+    "amount": -11.99,
+    "date": "2026-04-01",
+    "type": "debit",
+    "category": "ENTERTAINMENT_STREAMING",
+    "merchantName": "Music Streaming",
+    "description": "Music Streaming",
+    "pending": false,
+    "rawData": {
+      "id": "t0027",
+      "account_id": "acct_demo",
+      "amount": 11.99,
+      "date": "2026-04-01",
+      "category": "ENTERTAINMENT_STREAMING",
+      "personal_finance_category": {
+        "detailed": "ENTERTAINMENT_STREAMING"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0028",
+    "accountId": "acct_demo",
+    "amount": -5.0,
+    "date": "2026-04-01",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Newsletter",
+    "description": "Newsletter",
+    "pending": false,
+    "rawData": {
+      "id": "t0028",
+      "account_id": "acct_demo",
+      "amount": 5.0,
+      "date": "2026-04-01",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0014",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-04-02",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0014",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-04-02",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0060",
+    "accountId": "acct_demo",
+    "amount": -87.41,
+    "date": "2026-04-05",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0060",
+      "account_id": "acct_demo",
+      "amount": 87.41,
+      "date": "2026-04-05",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0066",
+    "accountId": "acct_demo",
+    "amount": -20.45,
+    "date": "2026-04-08",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0066",
+      "account_id": "acct_demo",
+      "amount": 20.45,
+      "date": "2026-04-08",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0015",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-04-09",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0015",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-04-09",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0078",
+    "accountId": "acct_demo",
+    "amount": -18.71,
+    "date": "2026-04-09",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0078",
+      "account_id": "acct_demo",
+      "amount": 18.71,
+      "date": "2026-04-09",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0086",
+    "accountId": "acct_demo",
+    "amount": -200.0,
+    "date": "2026-04-11",
+    "type": "debit",
+    "category": "TRANSFER_OUT_ACCOUNT_TRANSFER",
+    "merchantName": "Transfer to Savings",
+    "description": "Transfer to Savings",
+    "pending": false,
+    "rawData": {
+      "id": "t0086",
+      "account_id": "acct_demo",
+      "amount": 200.0,
+      "date": "2026-04-11",
+      "category": "TRANSFER_OUT_ACCOUNT_TRANSFER",
+      "personal_finance_category": {
+        "detailed": "TRANSFER_OUT_ACCOUNT_TRANSFER"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0061",
+    "accountId": "acct_demo",
+    "amount": -99.52,
+    "date": "2026-04-12",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0061",
+      "account_id": "acct_demo",
+      "amount": 99.52,
+      "date": "2026-04-12",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0016",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-04-16",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0016",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-04-16",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0062",
+    "accountId": "acct_demo",
+    "amount": -55.36,
+    "date": "2026-04-19",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0062",
+      "account_id": "acct_demo",
+      "amount": 55.36,
+      "date": "2026-04-19",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0075",
+    "accountId": "acct_demo",
+    "amount": -21.38,
+    "date": "2026-04-21",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0075",
+      "account_id": "acct_demo",
+      "amount": 21.38,
+      "date": "2026-04-21",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0080",
+    "accountId": "acct_demo",
+    "amount": -11.74,
+    "date": "2026-04-21",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0080",
+      "account_id": "acct_demo",
+      "amount": 11.74,
+      "date": "2026-04-21",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0083",
+    "accountId": "acct_demo",
+    "amount": -4.95,
+    "date": "2026-04-21",
+    "type": "debit",
+    "category": "BANK_FEES_OVERDRAFT_FEES",
+    "merchantName": "Monthly Service Fee",
+    "description": "Monthly Service Fee",
+    "pending": false,
+    "rawData": {
+      "id": "t0083",
+      "account_id": "acct_demo",
+      "amount": 4.95,
+      "date": "2026-04-21",
+      "category": "BANK_FEES_OVERDRAFT_FEES",
+      "personal_finance_category": {
+        "detailed": "BANK_FEES_OVERDRAFT_FEES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0017",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-04-23",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0017",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-04-23",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0084",
+    "accountId": "acct_demo",
+    "amount": -49.99,
+    "date": "2026-04-24",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_ONLINE_MARKETPLACES",
+    "merchantName": "Online Store",
+    "description": "Online Store",
+    "pending": false,
+    "rawData": {
+      "id": "t0084",
+      "account_id": "acct_demo",
+      "amount": 49.99,
+      "date": "2026-04-24",
+      "category": "GENERAL_MERCHANDISE_ONLINE_MARKETPLACES",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_ONLINE_MARKETPLACES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0085",
+    "accountId": "acct_demo",
+    "amount": -49.99,
+    "date": "2026-04-24",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_ONLINE_MARKETPLACES",
+    "merchantName": "Online Store",
+    "description": "Online Store",
+    "pending": false,
+    "rawData": {
+      "id": "t0085",
+      "account_id": "acct_demo",
+      "amount": 49.99,
+      "date": "2026-04-24",
+      "category": "GENERAL_MERCHANDISE_ONLINE_MARKETPLACES",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_ONLINE_MARKETPLACES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0043",
+    "accountId": "acct_demo",
+    "amount": -285.0,
+    "date": "2026-04-26",
+    "type": "debit",
+    "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+    "merchantName": "Car Loan",
+    "description": "Car Loan",
+    "pending": false,
+    "rawData": {
+      "id": "t0043",
+      "account_id": "acct_demo",
+      "amount": 285.0,
+      "date": "2026-04-26",
+      "category": "LOAN_PAYMENTS_CAR_PAYMENT",
+      "personal_finance_category": {
+        "detailed": "LOAN_PAYMENTS_CAR_PAYMENT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0063",
+    "accountId": "acct_demo",
+    "amount": -99.32,
+    "date": "2026-04-26",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_GROCERIES",
+    "merchantName": "Grocery Market",
+    "description": "Grocery Market",
+    "pending": false,
+    "rawData": {
+      "id": "t0063",
+      "account_id": "acct_demo",
+      "amount": 99.32,
+      "date": "2026-04-26",
+      "category": "FOOD_AND_DRINK_GROCERIES",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_GROCERIES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0039",
+    "accountId": "acct_demo",
+    "amount": -37.39,
+    "date": "2026-04-29",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Cloud Hosting",
+    "description": "Cloud Hosting",
+    "pending": false,
+    "rawData": {
+      "id": "t0039",
+      "account_id": "acct_demo",
+      "amount": 37.39,
+      "date": "2026-04-29",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0072",
+    "accountId": "acct_demo",
+    "amount": -22.01,
+    "date": "2026-04-29",
+    "type": "debit",
+    "category": "FOOD_AND_DRINK_RESTAURANT",
+    "merchantName": "Corner Cafe",
+    "description": "Corner Cafe",
+    "pending": false,
+    "rawData": {
+      "id": "t0072",
+      "account_id": "acct_demo",
+      "amount": 22.01,
+      "date": "2026-04-29",
+      "category": "FOOD_AND_DRINK_RESTAURANT",
+      "personal_finance_category": {
+        "detailed": "FOOD_AND_DRINK_RESTAURANT"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0018",
+    "accountId": "acct_demo",
+    "amount": 800.0,
+    "date": "2026-04-30",
+    "type": "credit",
+    "category": "INCOME_WAGES",
+    "merchantName": "PAYROLL",
+    "description": "PAYROLL",
+    "pending": false,
+    "rawData": {
+      "id": "t0018",
+      "account_id": "acct_demo",
+      "amount": 800.0,
+      "date": "2026-04-30",
+      "category": "INCOME_WAGES",
+      "personal_finance_category": {
+        "detailed": "INCOME_WAGES"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0019",
+    "accountId": "acct_demo",
+    "amount": -20.0,
+    "date": "2026-05-01",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "AI Assistant",
+    "description": "AI Assistant",
+    "pending": false,
+    "rawData": {
+      "id": "t0019",
+      "account_id": "acct_demo",
+      "amount": 20.0,
+      "date": "2026-05-01",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0020",
+    "accountId": "acct_demo",
+    "amount": -45.0,
+    "date": "2026-05-01",
+    "type": "debit",
+    "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+    "merchantName": "Phone Plan",
+    "description": "Phone Plan",
+    "pending": false,
+    "rawData": {
+      "id": "t0020",
+      "account_id": "acct_demo",
+      "amount": 45.0,
+      "date": "2026-05-01",
+      "category": "GENERAL_SERVICES_TELECOMMUNICATIONS",
+      "personal_finance_category": {
+        "detailed": "GENERAL_SERVICES_TELECOMMUNICATIONS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0021",
+    "accountId": "acct_demo",
+    "amount": -30.0,
+    "date": "2026-05-01",
+    "type": "debit",
+    "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+    "merchantName": "Gym",
+    "description": "Gym",
+    "pending": false,
+    "rawData": {
+      "id": "t0021",
+      "account_id": "acct_demo",
+      "amount": 30.0,
+      "date": "2026-05-01",
+      "category": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS",
+      "personal_finance_category": {
+        "detailed": "PERSONAL_CARE_GYMS_AND_FITNESS_CENTERS"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0022",
+    "accountId": "acct_demo",
+    "amount": -11.99,
+    "date": "2026-05-01",
+    "type": "debit",
+    "category": "ENTERTAINMENT_STREAMING",
+    "merchantName": "Music Streaming",
+    "description": "Music Streaming",
+    "pending": false,
+    "rawData": {
+      "id": "t0022",
+      "account_id": "acct_demo",
+      "amount": 11.99,
+      "date": "2026-05-01",
+      "category": "ENTERTAINMENT_STREAMING",
+      "personal_finance_category": {
+        "detailed": "ENTERTAINMENT_STREAMING"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  },
+  {
+    "id": "t0023",
+    "accountId": "acct_demo",
+    "amount": -5.0,
+    "date": "2026-05-01",
+    "type": "debit",
+    "category": "GENERAL_MERCHANDISE_SOFTWARE",
+    "merchantName": "Newsletter",
+    "description": "Newsletter",
+    "pending": false,
+    "rawData": {
+      "id": "t0023",
+      "account_id": "acct_demo",
+      "amount": 5.0,
+      "date": "2026-05-01",
+      "category": "GENERAL_MERCHANDISE_SOFTWARE",
+      "personal_finance_category": {
+        "detailed": "GENERAL_MERCHANDISE_SOFTWARE"
+      },
+      "counterparties": [],
+      "account_owner": "primary"
+    }
+  }
+]

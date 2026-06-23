@@ -1,0 +1,85 @@
+# Environment / secrets
+.env
+.env.*
+config/.env
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Testing / tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtualenvs
+.venv/
+venv/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# macOS
+.DS_Store
+
+# Real financial data — never commit (synthetic versions live in examples/)
+transactions.json
+cursor_state.json
+balance.json
+sync_state.json
+ledger_store.json
+merchant_overrides.json
+receipts.json
+rules.md
+
+# Local data directory for real (non-synthetic) inputs
+data/
+
+# Multi-source config (references token env var names — sensitive)
+plaid_items.json
+pluggy_items.json
+
+# Database files
+*.db
+*.sqlite
+
+# Generated output — regenerated from real bank data, never commit
+# (index.html is the committed landing TEMPLATE; the built copy is in site/)
+digest-*.md
+digest-*.json
+digest-*.html
+email-*.html
+report-*.md
+reports/
+
+# Runtime caches / ledgers (contain real merchant + dispute data once live)
+llm_match_cache.json
+merchant_contacts.json
+disputes.json
+
+# IDE
+.vscode/
+.idea/
+
+# Built static site (contains real bank-derived figures)
+site/
+fx-demo.html
+
+# Personal obligation registry (sensitive — local only; code falls back gracefully)
+obligations.json
+
+# Canonical local datastore (real financial data — never commit)
+finance.db
+
+# transient SQLite journal/WAL + data backups
+finance.db-*
+transactions.backup.json
+
+# per-person connection->owner map (local config)
+connection_owners.json
+
+# per-build balance snapshots (local state)
+balance_snapshots.json

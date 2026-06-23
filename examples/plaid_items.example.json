@@ -1,0 +1,16 @@
+[
+  {
+    "name": "primary-checking",
+    "token_env": "PLAID_ACCESS_TOKEN",
+    "owner": "primary",
+    "cursor_file": "~/.finance-mcp/plaid_sync_cursor.json",
+    "_comment": "Primary account holder's checking. If PLAID_ACCESS_TOKEN is unset, this Item can sync via the bank-mcp subprocess fork (which holds the credentials in ~/.bank-mcp/config.json). Keep exactly ONE tokenless Item — a second tokenless Item would re-pull the same fork connection."
+  },
+  {
+    "name": "secondary-checking",
+    "token_env": "PLAID_ACCESS_TOKEN_SECONDARY",
+    "owner": "secondary",
+    "cursor_file": "~/.finance-mcp/plaid_sync_cursor_secondary.json",
+    "_comment": "A second account holder's checking. 1) Run Plaid Link to create a 2nd Item -> access token. 2) security add-generic-password -a \"$USER\" -s PLAID_ACCESS_TOKEN_SECONDARY -w 'access-...'. Having a token routes this Item through Plaid direct, distinct from the tokenless fork connection."
+  }
+]

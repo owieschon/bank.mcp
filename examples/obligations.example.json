@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "as_of": "2026-01-15",
+  "discretionary_budget_monthly": 500.00,
+  "housing": {"status": "rent", "amount": 1200.00, "note": "Monthly rent."},
+  "obligations": [
+    {"name": "Cloud Hosting", "match": ["cloud hosting", "hosting"], "type": "metered", "amount": 35.00, "cadence": "monthly", "confidence": "medium",
+     "note": "Usage-billed hosting; anchored on a recent run-rate, not the lifetime mean."},
+    {"name": "AI Assistant", "match": ["ai assistant", "assistant"], "exact_amount": 20.00, "type": "fixed", "amount": 20.00, "cadence": "monthly",
+     "confidence": "high", "note": "Flat subscription — isolated by exact $20.00 from variable usage-billed API spend."},
+    {"name": "Car Loan", "match": ["car loan", "auto loan"], "type": "amortizing", "amount": 285.00, "cadence": "monthly",
+     "end_date": "2026-11-30", "confidence": "high",
+     "note": "Installment loan with an end date — drops to $0 once paid off."},
+    {"name": "Phone Plan", "match": ["phone", "wireless"], "type": "fixed", "amount": 45.00, "cadence": "monthly", "confidence": "high"},
+    {"name": "Gym", "match": ["gym", "fitness"], "type": "fixed", "amount": 30.00, "cadence": "monthly", "confidence": "high"},
+    {"name": "Object Storage", "match": ["object storage", "storage"], "type": "metered", "amount": 12.00, "cadence": "monthly", "confidence": "medium"},
+    {"name": "Music Streaming", "match": ["music streaming", "music"], "type": "fixed", "amount": 11.99, "cadence": "monthly", "confidence": "high",
+     "note": "The one subscription kept on purpose."},
+    {"name": "Newsletter", "match": ["newsletter"], "type": "fixed", "amount": 5.00, "cadence": "monthly", "confidence": "high"}
+  ],
+  "cut": [
+    {"name": "Streaming Video", "amount": 15.49, "reason": "cut — not watching it"},
+    {"name": "Meal Kit", "amount": 60.00, "reason": "cut — cooking from groceries instead"},
+    {"name": "Premium News", "amount": 25.00, "reason": "redundant with the free tier"},
+    {"name": "Budgeting App", "amount": 14.99, "reason": "this suite replaces it"}
+  ]
+}
