@@ -2,8 +2,9 @@
 
 This repo is a public work-sample copy of a private personal-finance project. This
 file records what changed and why, so the diff from the original is reviewable rather
-than mysterious. The behavior of the financial engines was **preserved throughout** —
-the 292-test suite passed before and after every step.
+than mysterious. The behavior of the financial engines was **preserved throughout** — the test suite
+passed at every step (292 tests through the cleanup; 296 after the SQL analytics layer
+below added four).
 
 ## Provenance / git history
 
@@ -93,8 +94,21 @@ called out here rather than slipped in silently.
   SSRF wrapper. Routing it through `safehttp` is a sensible hardening follow-up, not done
   here because it alters a working network path.
 
+## 8. Added a SQL analytics layer
+
+The descriptive reporting rollups are now expressed in SQL, both because it is the
+idiomatic tool for set-based analytics over a relational store and as a deliberate
+demonstration of SQL competency. `store/queries.sql` holds three readable, commented
+CTE queries using window functions — monthly cash flow with a running total
+(`SUM() OVER`) and month-over-month delta (`LAG()`), category breakdown as a share of
+spend (ratio-to-total window), and top merchants ranked (`RANK()`). `store/analytics.py`
+runs them and `finance-mcp analytics` prints them. `tests/test_analytics.py` cross-checks
+every query result against an independent Python recomputation so the SQL and the
+engines can never silently diverge. The algorithmic forecasting/cadence math was left in
+Python — SQL would be the wrong tool for it. (See `docs/DECISIONS.md` §3.)
+
 ## Verification
 
-`pip install -e ".[dev]"` succeeds; `ruff check src tests` is clean; **292 tests pass**
+`pip install -e ".[dev]"` succeeds; `ruff check src tests` is clean; **296 tests pass**
 via the installed package; `finance-mcp demo` and `build_site` both produce output from
 synthetic data. PII/secret sweeps over the whole tree come back clean.

@@ -18,7 +18,12 @@ pip install -e ".[dev]"
 ```bash
 finance-mcp demo            # build + print a digest from synthetic data
 finance-mcp demo --json     # dump the synthetic transaction dataset
+finance-mcp analytics       # SQL reporting rollups over the store (see store/queries.sql)
 ```
+
+`analytics` runs the SQL read-models in `src/finance_mcp/store/queries.sql`
+(window functions; requires SQLite ≥ 3.25, which every supported Python ships).
+With no `--db` it seeds an in-memory database from the synthetic demo data.
 
 The synthetic dataset is generated deterministically by `src/finance_mcp/demo.py`
 and is also the source of the test fixture (`tests/fixtures/transactions.sample.json`).
@@ -26,7 +31,7 @@ and is also the source of the test fixture (`tests/fixtures/transactions.sample.
 ## Tests and lint
 
 ```bash
-pytest -q                   # 292 tests
+pytest -q                   # 296 tests
 ruff check src tests
 ```
 

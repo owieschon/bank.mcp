@@ -28,6 +28,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 "finance_mcp" = ["data/*.md", "data/*.json"]
+"finance_mcp.store" = ["*.sql"]
 "finance_mcp.report" = ["web/*.html", "web/assets/*.js"]
 
 [tool.pytest.ini_options]

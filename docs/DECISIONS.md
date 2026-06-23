@@ -13,31 +13,29 @@ dependencies** — a property worth protecting. PostgreSQL would add an external
 service to run, a third-party driver to install, and operational overhead, in
 exchange for nothing this workload needs.
 
-**The SQL / Python boundary is already where it should be, so no
-language-fit refactor was made:**
+**The SQL / Python split follows the shape of each problem:**
 
-- **SQL (SQLite) owns storage and retrieval** — `store/db.py` defines the schema,
-  does an idempotent `upsert` keyed on transaction id (with pending→posted
-  supersession), indexes `(owner, date)`, and filters by `owner`/`since` in the
-  query. That is exactly what a relational store is good at, and it is done in
-  SQL.
-- **Python owns the analysis** — and most of it is *algorithmic, not set-based*:
-  median inter-charge-gap cadence classification, price-step detection,
-  cash-flow projection / roll-forward, recurring-stream detection, dispute
-  tracking. These are iterative, stateful computations; expressing them as SQL
-  `GROUP BY` would be the wrong tool and harder to read.
+- **SQL owns storage, retrieval, and descriptive analytics.** `store/db.py` defines
+  the schema, does an idempotent `upsert` keyed on transaction id (with pending→posted
+  supersession), indexes `(owner, date)`, and filters by `owner`/`since` in the query.
+  The **reporting read-models** — monthly cash flow (with a running total and a
+  month-over-month delta), category breakdown (each category's share of spend), and
+  top merchants by spend — live in `store/queries.sql` and are run by
+  `store/analytics.py`. These are set-based aggregations over a relational store, so
+  SQL (CTEs, `GROUP BY`, and window functions: `SUM() OVER`, `LAG()`, `RANK()`) is the
+  idiomatic, clearest tool, and the queries are written to be read top-to-bottom.
+- **Python owns the algorithmic analysis** — median inter-charge-gap cadence
+  classification, price-step detection, cash-flow projection / roll-forward,
+  recurring-stream detection, dispute tracking. These are iterative, stateful
+  computations; expressing them as `GROUP BY` would be the wrong tool. They are also
+  the deterministic, unit-tested financial core, so they stay in Python where the
+  test surface is single-language.
 
-**The set-based spots were considered for SQL and deliberately left in Python.**
-A handful of operations (category breakdowns, monthly in/out sums, date-range
-filters) *are* set-based and *could* be `GROUP BY` queries over the typed
-columns. They were left in Python because: (1) the dataset is tiny and already
-in memory, so SQL yields no performance benefit; (2) this is the deterministic,
-unit-tested financial core — pushing the math into SQL would split the tested
-surface across two languages and invite subtle rounding/string-date differences;
-(3) the engines intentionally read the lossless `raw` JSON column (the typed
-columns are a query/filter index, not the engines' data source). Adding SQL here
-would invert a deliberate design for no functional gain. Per "preserve what
-works" and "don't add SQL to look sophisticated," it stays Python.
+So the boundary is principled: **set-based reporting → SQL; algorithmic forecasting →
+Python.** The dataset is small enough that SQL is chosen for clarity and idiom, not
+performance, and `test_analytics.py` cross-checks every query result against an
+independent Python recomputation so the two never silently diverge. (Window functions
+need SQLite ≥ 3.25, which every supported Python ships.)
 
 ## Deterministic math, LLM only at the edges
 

@@ -51,6 +51,11 @@ amounts, signs, dates, merchant identity, and cadence through it (`is_outflow`,
 `amount_magnitude`, `parse_date`, `merchant_key`, `classify_cadence`, …) rather than
 re-deriving them. `obligation_registry` models forward commitments; `merchant_categorizer`
 maps transactions to human categories.
+`queries.sql` + `analytics.py` are the **SQL reporting read-models** — monthly cash
+flow (running total + month-over-month delta), category breakdown (share of spend),
+and top merchants — computed as CTE/window-function queries over the typed columns,
+because set-based reporting is what SQL is for (the algorithmic forecasting stays in
+Python). `tests/test_analytics.py` cross-checks each query against a Python recompute.
 
 **`engines/` — the deterministic cores.**
 `cashflow_forecaster` (projection / overdraft), `budget_scorer` (savings-goal pace),

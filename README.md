@@ -18,7 +18,7 @@ It runs on the **Python standard library only — zero runtime dependencies.**
 
 > Status: a personal project, cleaned up as a work sample. All data in the repo is
 > synthetic (`examples/`, `src/finance_mcp/demo.py`); there is no real financial data
-> here. 292 tests pass; `ruff` is clean.
+> here. 296 tests pass; `ruff` is clean.
 
 ## Shape of the system
 
@@ -46,7 +46,8 @@ The package layout mirrors that flow:
 src/finance_mcp/
   ingest/    safehttp · plaid_bridge · plaid_link · sync
   store/     db (SQLite) · subscription_creep (field/cadence accessors) ·
-             obligation_registry · merchant_categorizer
+             obligation_registry · merchant_categorizer ·
+             queries.sql + analytics (SQL reporting read-models)
   engines/   cashflow_forecaster · budget_scorer · fee_fraud_scan ·
              recurring · receipt_scanner · dispute_agent · llm_matcher
   report/    delivery · digest_templates · build_site · web/
@@ -65,7 +66,8 @@ python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
 finance-mcp demo        # build + print a full digest from synthetic data
-pytest -q               # 292 tests
+finance-mcp analytics   # SQL reporting rollups (see src/finance_mcp/store/queries.sql)
+pytest -q               # 296 tests
 ruff check src tests    # lint
 ```
 
